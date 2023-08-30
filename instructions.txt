@@ -1,0 +1,71 @@
+Para la construcción de la API debe contener los siguientes funcionalidades:
+• Un usuario de puede registrar en la API
+• Un usuario inicia sesión con el email y el password
+• Los registros se guardarán en la base de datos PostgreSQL
+• Una vez registrado el usuario usuario puede agregar bootcamp
+• Puede asignar usuarios a los bootcamp
+• La consulta de los bootcamp es pública
+--------------------
+
+La APIs debe proveer las siguientes endpoint:
+Métodos URL Acción
+POST /api/signup Registro de una nuevo usuario, acceso público
+POST /api/signin Inicio de sesión en la API, acceso público
+GET /api/user/:id Lista información del usuario según id, acceso por medio de
+token, previamente iniciado sesión
+
+GET /api/user/ Lista información de todos los usuarios y los Bootcamp
+registrados, acceso por medio de token, previamente iniciado
+sesión
+
+PUT /api/user/:id Actualiza los campos de firstName y lastName de un usuario
+según su id, acceso por medio de token, previamente iniciado
+sesión
+
+DELETE /api/user/:id Elimina el usuario según id, acceso por medio de token,
+previamente iniciado sesión
+
+POST /api/bootcamp Crea un bootcamp, acceso por medio de token, previamente
+iniciado sesión
+
+POST /api/bootcamp/adduser Agrega usuarios previamente registrados al bootcamp, acceso
+por medio de token, previamente iniciado sesión
+
+GET /api/bootcamp/:id Obtiene información de un bootcamp según id, y muestra los
+usuarios registrados en el bootcamp. Acceso por medio de
+token, previamente iniciado sesión
+
+GET /api/bootcamp Lista todos los bootcamp, acceso público
+--------------------
+
+
+
+REQUISISTOS
+
+Realizar las siguientes consultas con Postman:
+1 ● Iniciar sesión de un usuario con email y contraseña, por ejemplo:
+{
+"email": "pedroperez2@test.com",
+"password": "25qw52qs"}
+
+2 ● Iniciar sesión de un usuario con email y contraseña, con usuario registrado
+
+3 ● Listar todos los usuarios con sus bootcamp
+
+4 ● Listar el usuario con el id 3
+
+5 ● Actualizar el usuario según su id, por ejemplo actualizar el usuario con id=1 por Pedro Sánchez
+
+6 ● Eliminar un usuario por id, por ejemplo el usuario con id=1
+
+7 ● Consultando el bootcamp por id, incluyendo los usuarios registrados
+
+8 ● Listar todos los bootcamp con sus usuarios
+
+9 ● Consultar un usuario por id incluyendo los bootcamp
+
+10 ● Gestione adecuadamente el manejo de errores
+
+Como referencia para la adecuación del controlador del usuario para el registro de un nuevo usuarios por
+medio de la ruta /api/signup, se puede tener presente lo siguiente:
+ver hojadel drilling
